@@ -194,6 +194,8 @@ double logfactorial(int64_t k)
      *  This approximation is accurate to within 2 ULP of the best 64-bit
      *  floating point value for k up to 10^7 (tested in Python reference implementation).
      *  
+     *  Note: At this point, k >= table_size (126), so k > 0 and division by k is safe.
+     *  
      *  The formula is rearranged to minimize the number of divisions:
      *  - One division (1.0/k) is reused via the variable k_inv
      *  - k*k is computed once and reused
